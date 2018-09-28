@@ -1,0 +1,337 @@
+body {
+    background-color: rgb(156, 155, 153);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(51, 51, 51, 0.2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: solid 5px rgb(51, 51, 51, 0.7);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    
+    font-size: 30px;
+    
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(196, 193, 193);
+    color: rgb(51, 51, 51, 0.7);
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgb(196, 193, 193);
+}
+
+#store {
+   
+    border-right: solid 5px rgb(51, 51, 51, 0.7);
+    color: rgb(51, 51, 51, 0.7);
+    text-decoration: none;
+}
+
+#store:hover {
+    
+    color:  rgb(51, 51, 51, 0.7);
+    
+   
+}
+
+#adminButton {
+    border-left: solid 5px rgb(51, 51, 51, 0.7);
+}
+
+#newsButton {
+    
+    border-right: solid 5px rgb(51, 51, 51, 0.7);
+}
+
+.aFontSize {
+    font-size: 30px;
+    margin: auto;
+}
+
+#myCarousel{
+    width: 40%;
+    
+    float: right;
+    margin-right: 20%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.carousel-indicators {
+    color: black;
+}
+
+#categoriesDiv {
+    float: left;
+    text-align: center;
+    border-style:none;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 250px;
+    background-color: rgb(248, 248, 248, 0.3);
+}
+
+#categoriesDiv:hover {
+    background-color: rgba(46, 45, 45, 0.2);
+    transition-duration: 0.2s;
+    color: aliceblue;
+}
+
+
+#categoriesDiv .categoryPrice:hover {
+    background-color: rgba(46, 45, 45, 0.2);
+    transition-duration: 0.2s;
+    color: rgb(25, 180, 46);
+}
+
+#categories {
+    float: right;
+    width: 70%;
+}
+.categoryImage {
+    max-height: 120px;
+    padding: 10px;
+}
+
+#seeMore{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgba(46, 45, 45, 0);
+    border-style: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+     
+
+}
+
+#seeMore:hover {
+    background-color: rgb(68, 67, 65, 0.7);
+    color: rgb(180, 108, 25);
+    border-radius: 5px;
+}
+
+.categoryName {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 25px;
+}
+
+.categoryPrice {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#detailsAboutProduct {
+    width: 75%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5vh;
+    background-color: rgb(248, 248, 248, 0.2);
+    border-style: none;
+    text-align: center;
+    font-size: 20px;
+    text-align: right;
+}
+
+
+
+#imageDetailDiv{
+    margin-left: 13%;
+    max-width: 500px;
+    float: left;    
+}
+
+
+#imageDetail {
+    margin-left: 13%;
+    max-width: 500px;
+    float: left;   
+}
+
+#addToCart {
+    background-color: rgb(51, 51, 51, 0.7);
+    border-style: none;
+    color: aliceblue;
+    margin-top: 10vh;
+    margin-left: 40%;
+    width: 5%;
+    height: 35px;
+    font-size: 15px;
+    
+    text-decoration: none;
+
+}
+
+#addToCart:hover {
+    background-color: rgb(248, 248, 248);
+    color: black;
+}
+
+#detailsFromServer {
+    width: 75%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 15vh;
+    background-color: rgb(248, 248, 248, 0.2);
+    border-style: none;
+    text-align: center;
+    padding-left: 25%;
+    text-align: right;
+}
+
+#loadingDiv {
+    text-align: center;
+}
+
+#loadingDiv img {
+    max-height: 80vh;
+    max-width: 80vw;
+}
+
+#loadingDiv {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+
+#loader {
+    width: auto;
+}
+
+#addedMessage {
+    margin: auto;
+    padding: 10px;
+    color: rgb(51, 51, 51, 0.7);
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif; 
+    background-color: rgb(196, 193, 193);
+}
+
+#emptyCartMessage{
+    margin: auto;
+    width: 50%;
+    margin-top: 300px;
+    font-family: 'Josefin Sans', sans-serif; 
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(212, 209, 209);
+    transition-duration: 1s;
+}
+
+#emptyCartMessage:hover {
+    color: rgb(51, 51, 51, 0.7);
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#tableHead {
+    background-color: rgb(51, 51, 51, 0.2);
+}
+
+#imgCart {
+    max-height: 50px;
+}
+
+#loginn {
+    width: 50%;
+    margin:auto;
+    margin-top: 100px;
+    text-align: center;
+    border: 4px solid #dddddd;
+    padding: 15px;
+    transition: 2s;
+}
+
+#loginn:hover {
+    width: 55%;
+}
+
+#em, #parola {
+    padding: 10px;
+}
+
+#loginButton {
+    height: 45px;
+    width: 75px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#contactt {
+    width: 50%;
+    margin:auto;
+    margin-top: 100px;
+    text-align: center;
+    border: 4px solid #dddddd;
+    padding: 15px;
+    transition: 2s;
+}
+
+#contactt:hover {
+    width: 55%;
+}
+
+#contactNameInput{
+    padding: 10px;
+}
+
+#contactEmailInput {
+    padding: 10px;
+}
+
+#messageContact {
+    padding: 10px;
+    width: 30%;
+}
+
+#contactSendButton {
+    height: 45px;
+    width: 75px;
+}
+
+#contactClearButton {
+    height: 45px;
+    width: 75px;
+}

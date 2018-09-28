@@ -1,0 +1,71 @@
+body {
+    background-image: url(mbr-1-1920x1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+
+}
+
+
+#repLink {
+    margin-top: 200px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+#repLink a {
+    color: rgb(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition-duration: 1s;
+}
+
+#repLink a:hover {
+    color: white;
+    font-size: 1.6rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+#links {
+    width: 15%;
+    height: auto;
+    margin: auto;
+    background-color: rgba(21, 22, 22, 0.5);
+    text-align: center;
+    border-radius: 100px;
+    padding: 10px;
+    transition-duration: 1s;
+    cursor: pointer;
+    
+}
+
+#links:hover {
+    width: 20%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.3);
+    color: black;
+    
+}
+
+#links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#links ul li a:hover {
+    color: black;
+}
+
+
+

@@ -1,0 +1,229 @@
+html {
+    background: #484d5c;
+
+}
+
+#container {
+    background: #252629;
+    width: 50%;
+    margin: auto;
+    border-top-left-radius: 600px;
+    border-right: solid 10px #0f0f0f;
+}
+
+#img {
+    height: auto;
+    height: auto;
+    max-width: 200px;
+    max-height:200px;
+    float: left;
+    transition-duration: 0.7s;
+}
+
+#img:hover {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#header {
+    text-align: center;
+    color: whitesmoke;
+    margin: auto;
+    line-height: 85px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    font-size: 30px;
+}
+
+#header:hover {
+    font-size: 35px;
+    transition-duration: 0.3s;
+
+}
+
+
+#addDiv {
+  
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    height: auto;
+    border-top-right-radius: 100px;
+    padding-top: 60px;   
+}
+
+span {
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(156, 146, 132);
+    padding-top: 10px;
+}
+
+span:hover {
+   
+    text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;
+    transition-duration: 0.2s;
+}
+
+#insertName, #insertPhone {
+    height: 35px;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+
+#but {
+    padding: 50px;
+}
+
+#addContact {
+    background-color: rgb(15, 229, 11);
+    color: white;
+    height: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    width: 43%;
+    font-weight: lighter;
+    transition-duration: 0.8s;
+    margin-left: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#addContact:hover {
+    font-size: 30px;
+    height: 40px;
+    font-weight:bolder;
+    width: 80%;
+    text-align: center;
+    margin-left: 50%;
+}
+
+#middleContent {
+    width: 50%;
+    margin: auto;
+    height: auto;
+    margin-top: 0;
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+#entriesTable {
+    transition-duration: 0.3s;
+    margin: auto;
+    width: 500px;
+}
+
+tr {
+    font-size: 20px;
+    margin: 100px;
+    color: antiquewhite;
+    
+    margin-left: 50%;
+    width: 30%;
+}
+
+#form {
+    width: 80%;
+
+}
+
+#inputsField {
+    margin-left: 50%;
+    width: 90%;
+}
+
+#thead {
+    background-color: #0f0f0f;
+}
+
+.tableHead {
+    border-radius: 10px;
+}
+
+#inputValues {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#editButton {
+    background-color: chocolate;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition-duration: 0.8s;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 20px;
+}
+
+#editButton:hover {
+    
+    height: 30px;
+}
+
+#deleteButton {
+    background-color: rgb(210, 36, 30);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition-duration: 0.8s;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 20px;
+}
+
+#deleteButton:hover {
+    width: 50px;
+    height: 30px;
+}
+
+#saveNewEntry {
+    background-color: rgb(15, 229, 11);
+    color: white;
+    height: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    width: 43%;
+    font-weight: lighter;
+    transition-duration: 0.8s;
+    margin-left: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#saveNewEntry:hover {
+    font-size: 30px;
+    height: 40px;
+    font-weight:bolder;
+    width: 80%;
+    text-align: center;
+    margin-left: 50%;
+}
+
+#footer {
+   position: absolute;
+   bottom: 0;
+   right: 24.5%;
+   width: 50%;
+   padding: 1rem 0;
+   background-color: #252629;
+   text-align: center;
+   border-right: solid 10px #0f0f0f;
+   color: antiquewhite;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+
+#error {
+    color: rgb(228, 114, 114);
+    opacity: 0;
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    transition: all, 0.8s;
+}

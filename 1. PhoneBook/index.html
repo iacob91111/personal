@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Phone Book App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="phone.ico" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylePhoneBookApp.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <script src="behaviourPhoneBookApp.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="phoneBookApp.html">
+                <img id="img" src="ph.png" alt="">
+            </a>
+            <h1>Phone Book</h1>
+        </div>
+        <div id="addDiv">
+            <form id="form">
+                <div id="inputsField">
+                    <span>Name:</span>&nbsp;
+                    <input type="text" id="insertName" placeholder="Enter name" required /><br>
+                    <span>Phone:</span>&nbsp;
+                    <input type="number" id="insertPhone" placeholder="Enter phone number" required/>
+                    <br>
+                    <label id="error">Name or phone number missing!!!</label>
+                </div>
+                <div id="but">
+                    <input type="button" id="addContact" value="Add contact" onclick="addNewContact()" />
+                </div>
+            </form>
+        </div>
+        <div id="middleContent" style="display: none">
+            <table id="entriesTable">
+                <thead id="thead">
+                    <tr>
+                        <th class="tableHead" style="padding: 10px;">Name</th>
+                        <th class="tableHead" style="padding: 10px;">Phone No</th>
+                        <th class="tableHead" style="padding: 10px;">Action 1</th>
+                        <th class="tableHead" style="padding: 10px;">Action 2</th>
+                    </tr>
+                </thead>
+                <tbody id="inputValues"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer id="footer">Copyright &copy Ionut Iacob 2018</footer>
+
+</body>
+
+</html>

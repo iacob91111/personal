@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <meta charset=utf-8 />
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="index2.html">Shopping List</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div id="main">
+        <div id="title1">Shopping List</div>
+
+        <div id="inputButton">
+            <input id="input" class="product" type="text" placeholder="Type product name..." required />
+            <label id="error">Product is missing!!!</label>
+            <button id="Button" type="" value="Add item" onclick="addProduct();displayItems();document.getElementById('input').value = ''">Add item</button>
+        </div>
+
+        <div id="itemsAction">
+            <div id="sort">
+                <button id="asc" onclick="sortAsc()">Sort asc</button>
+                <button id="desc" onclick="sortDesc()">Sort desc</button>
+            </div>
+
+            <table id="myTable">
+
+                <thead>
+                    <th class="theader1">Item description</th>
+                    <th class="theader2">Action</th>
+                </thead>
+
+                <tbody id="body">
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="behaviour.js"></script>
+
+</html>

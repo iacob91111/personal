@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="behaviour.js"></script>
+    <title>eOn | Admin</title>
+    <script>
+        var itemsList = [];
+        var idsItemsFromServer = [];
+        var idItemEditing;
+
+        function getItemsFromServer(callback) {
+            var promise = fetch("https://finalonlineshop.firebaseio.com/.json",
+                { method: 'GET' })
+                .then(r => r.json());
+
+            promise.then(serverDataAsJson => {
+                itemsList = [];
+                if (serverDataAsJson !== null) {
+                    let serverKeys = Object.keys(serverDataAsJson);
+                    idsItemsFromServer = serverKeys;
+                    for (let i = 0; i < serverKeys.length; i++) {
+                        let client = serverDataAsJson[serverKeys[i]];
+                        itemsList.push(client);
+                    }
+                }
+
+                callback(itemsList);
+            });
+        }
+
+        function addNewItem() {
+            let newItem = {
+                "Image": document.getElementById('in_Image').value,
+                "Name": document.getElementById('in_Name').value,
+                "Price": document.getElementById('in_Price').value,
+                "Qty": document.getElementById('in_Qty').value,
+                "Details": document.getElementById('in_Details').value
+            };
+            var promise = fetch("https://finalonlineshop.firebaseio.com/.json",
+                { method: 'POST', body: JSON.stringify(newItem) })
+                .then(r => r.json());
+
+            promise.then(res => {
+                getItemsFromServer(displayTable);
+            });
+        }
+
+        function deleteItemFromServer(id) {
+            var promise = fetch(`https://finalonlineshop.firebaseio.com/${id}.json`,
+                { method: 'DELETE' })
+                .then(r => r.json());
+
+            promise.then(res => {
+                getItemsFromServer(displayTable);
+            });
+        }
+
+        function edit(index, idItem) {
+            idItemEditing = idItem;
+            document.getElementById('edit_Image').value = itemsList[index].Image;
+            document.getElementById('edit_Name').value = itemsList[index].Name;
+            document.getElementById('edit_Price').value = itemsList[index].Price;
+            document.getElementById('edit_Qty').value = itemsList[index].Qty;
+            document.getElementById('edit_Details').value = itemsList[index].Details;
+            document.getElementById('tableSaveNewItem').style.display = "block";
+        }
+
+        function saveEdit() {
+            document.getElementById('tableSaveNewItem').style.display = "none";
+            let editedItem = {
+                "Image": document.getElementById('edit_Image').value,
+                "Name": document.getElementById('edit_Name').value,
+                "Price": document.getElementById('edit_Price').value,
+                "Qty": document.getElementById('edit_Qty').value,
+                "Details": document.getElementById('edit_Details').value
+
+            };
+
+            var promise = fetch(`https://finalonlineshop.firebaseio.com/${idItemEditing}.json`,
+                { method: 'PUT', body: JSON.stringify(editedItem) })
+                .then(r => r.json());
+
+            promise.then(res => {
+                getItemsFromServer(displayTable);
+            });
+            
+        }
+
+        function displayTable(list) {
+            var body = document.querySelector('#displayTableId tbody');
+            var generatedBody = "";
+            for (let i = 0; i < list.length; i++) {
+                let idItem = idsItemsFromServer[i];
+                generatedBody += `
+    <tr>
+    <td class="image"><img id = "imgCart" src="${list[i].Image}"></td>
+    <td>${list[i].Name}</td>
+    <td>${list[i].Price}</td>
+    <td>${list[i].Qty}</td>
+    <td>${list[i].Details}</td>
+    <td>
+    <button onclick="edit('${i}', '${idItem}')" style="width:100%;">Edit</button>
+    </td>
+    <td>
+    <button onclick="deleteItemFromServer('${idItem}')" style="width:100%;">Delete</button>
+    </td>
+    </tr>
+    `;
+            }
+            body.innerHTML = generatedBody;
+        }
+    </script>
+    <style>
+        th {
+                min-width: 100px;
+            }
+
+        #tableAddNewItem {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+          }
+
+        #tableSaveNewItem {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+          }
+        #buttonAddNewItem {
+            width: 13rem;
+            height: 35px;
+          }
+
+          #buttonSaveNewItem {
+            width: 30%;
+            height: 35px;
+          }
+
+        
+        </style>
+</head>
+</head>
+
+<body onload="getItemsFromServer(displayTable); showCounter();">
+    <div id="menuBar">
+        <ul>
+            <li>
+                <a id="store" class="active" href="index.html">eOn Store</a>
+            </li>
+            <li>
+                <a class="aFontSize" id="newsButton" href="https://en.wikipedia.org/wiki/E-commerce">About</a>
+            </li>
+            <li>
+                <a class="aFontSize" href="contact.html">Contact</a>
+            </li>
+            <li id="adminButton" style="float:right">
+                <a class="aFontSize" href="admin.html">
+                    <i class="fas fa-fingerprint"></i>&nbsp;Admin</a>
+            </li>
+            <li style="float:right">
+                <a class="aFontSize" href="shoppingCart.html">
+                    <i class="fas fa-shopping-cart"></i>&nbsp;Shopping cart
+                    <span id="itemsCounter">(0)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <table id="tableAddNewItem" border="1">
+        <tbody>
+            <tr>
+                <th>Image</th>
+                <td>
+                    <input id="in_Image" />
+                </td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <input id="in_Name" />
+                </td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>
+                    <input type="number" id="in_Price" />
+                </td>
+            </tr>
+            <tr>
+                <th>Qty</th>
+                <td>
+                    <input type="number" id="in_Qty" />
+                </td>
+            </tr>
+            <th>Details</th>
+            <td>
+                <input id="in_Details" />
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="buttonAddNewItem" onclick="addNewItem()">Add new item</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table id="tableSaveNewItem" border="1" style="display: none">
+            <tbody>
+                <tr>
+                    <th>Image</th>
+                    <td>
+                        <input id="edit_Image" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>
+                        <input id="edit_Name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>
+                        <input type="number" id="edit_Price" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Qty</th>
+                    <td>
+                        <input type="number" id="edit_Qty" />
+                    </td>
+                </tr>
+                <th>Details</th>
+                <td>
+                    <input id="edit_Details" />
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button id="buttonSaveNewItem" onclick="saveEdit()">Save</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    <table border="1" id="displayTableId">
+        <thead>
+            <th onclick="displayTable(itemsList)">Image</th>
+            <th onclick="displayTable(itemsList)">Name</th>
+            <th onclick="displayTable(itemsList)">Price</th>
+            <th onclick="displayTable(itemsList)">Qty</th>
+            <th onclick="displayTable(itemsList)">Details</th>
+            <th onclick="displayTable(itemsList)">Action 1</th>
+            <th onclick="displayTable(itemsList)">Action 2</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+    <script src="behaviour.js"></script>
+</body>
+
+</html>

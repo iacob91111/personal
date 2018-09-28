@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: black;
+}
+    
+body {
+    margin: 0;
+    font-family:  'Josefin Sans', sans-serif;
+    font-size: 35px;
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(ezgif.com-gif-maker.gif) center no-repeat #fff;
+}
+
+#img {
+    padding: 10px;
+    margin-left: 45%;
+    margin-top: 15%;
+    cursor: pointer;
+    color: #1B8ADB;
+    transition: 1s;
+}
+
+#img:hover {
+    font-size: 40px;
+}
+
+#shoppingCart {
+    max-width: 130px;
+    max-height:130px;
+    transition: 1s;
+   
+}
+
+#shoppingCart:hover {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #1B8ADB;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#main {
+    width: 70%;
+    background-color: #1b8adb;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 40%;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+   
+}
+
+#title1 {
+    width: 50%;
+    margin: auto;
+    font-size: 45px;
+    color: white;
+    font-family: 'URW Chancery L', 'cursive';
+    
+}
+
+#inputButton {
+    width: 50%;
+    margin: auto;
+}
+
+#input {
+    background-color: beige;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#input:focus {
+    border: 2px solid rgb(170, 76, 76) !important;
+}
+
+#error {
+    font-size: 15px;
+    color: rgb(197, 17, 17);
+    opacity: 0;
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    transition: all, 0.8s;
+}
+
+#Button {
+    height: 35px;
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+#Button:hover {
+    height: 40px;
+    font-size: 25px;
+}
+
+#itemsAction {
+    display: none;
+    width: 50%;
+}
+
+#sort {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+#asc {
+    height: 35px;
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+#asc:hover {
+    height: 40px;
+    font-size: 25px;
+}
+
+#desc {
+    height: 35px;
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+#desc:hover {
+    height: 40px;
+    font-size: 25px;
+}
+
+#myTable {
+    background-color: beige;
+    width: 55%;
+    margin: auto;
+    padding: 20px 50px 50px 50px;
+    border-top: 10px solid rgb(155, 21, 21);
+    text-align: center;
+    font-size: 25px;
+}
+
+.bought {
+    text-decoration: line-through;
+    text-decoration-color: rgb(155, 21, 21);
+}
+
+
+#bought {
+    height: 35px;
+    width: 110%;
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+#bought:hover {
+    
+}

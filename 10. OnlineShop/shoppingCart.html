@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="behaviour.js"></script>
+    <title>eOn | Shopping Cart</title>
+</head>
+
+<body onload="showCounter(); showTableCart()">
+    <div id="menuBar">
+        <ul>
+            <li>
+                <a id="store" class="active" href="index.html">eOn Store</a>
+            </li>
+            <li>
+                <a class="aFontSize" id="newsButton" href="https://en.wikipedia.org/wiki/E-commerce">About</a>
+            </li>
+            <li>
+                <a class="aFontSize" href="contact.html">Contact</a>
+            </li>
+            <li id="adminButton" style="float:right">
+                <a class="aFontSize" href="adminLogIn.html">
+                    <i class="fas fa-fingerprint"></i>&nbsp;Admin</a>
+            </li>
+            <li style="float:right">
+                <a class="aFontSize" href="shoppingCart.html">
+                    <i class="fas fa-shopping-cart"></i>&nbsp;Shopping cart
+                    <span id="itemsCounter">(0)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="shoppingDetails">
+        <div id="emptyCartMessage">You have no items added your cart!</div>
+    </div>
+
+    <table id = "tableCart" style="display: block">
+        <tr id="tableHead">
+            <th>Image</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th>Total</th>
+            <th>Action 1</th>
+        </tr>
+
+        <tbody id="tBodyCart">
+
+        </tbody>
+
+
+    </table>
+
+    <script src="behaviour.js"></script>
+</body>
+
+</html>
+
+
+<!--<table id = "tableCart">
+            <tr id="tableHead">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+
+        </table>-->

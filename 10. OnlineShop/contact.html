@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="behaviour.js"></script>
+    <title>eOn | Admin</title>
+</head>
+
+<body onload="showCounter()">
+    <div id="menuBar">
+        <ul>
+            <li>
+                <a id="store" class="active" href="index.html">eOn Store</a>
+            </li>
+            <li>
+                <a class="aFontSize" id="newsButton" href="https://en.wikipedia.org/wiki/E-commerce">About</a>
+            </li>
+            <li>
+                <a class="aFontSize" href="contact.html">Contact</a>
+            </li>
+            <li id="adminButton" style="float:right">
+                <a class="aFontSize" href="adminLogIn.html">
+                    <i class="fas fa-fingerprint"></i>&nbsp;Admin</a>
+            </li>
+            <li style="float:right">
+                <a class="aFontSize" href="shoppingCart.html">
+                    <i class="fas fa-shopping-cart"></i>&nbsp;Shopping cart
+                    <span id="itemsCounter">(0)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="contactt" action="index.html" method="post">
+            <h1 style="font-size: 40px;">Please fill below information:</h1>
+            <label>Your name:</label></br>
+            <input id = "contactNameInput" type="text" name="cf_name" placeholder="Type your name..." required>
+                </br>
+                </br>
+            <label>Your e-mail address:</label>
+                </br>
+            <input id = "contactEmailInput" type="email" name="cf_email" placeholder="Type your e-mail address..." required>
+                </br>
+                </br>
+            <label>Message:</label>
+                </br>
+            <textarea id="messageContact" placeholder="Your Message..." required></textarea>
+                </br>
+                </br>
+            <input id="contactSendButton" type="submit" onclick="thankYou()" value="Send">
+            <input id="contactClearButton" type="reset" value="Clear">
+        </form>
+
+    <script src="behaviour.js"></script>
+</body>
+
+</html>

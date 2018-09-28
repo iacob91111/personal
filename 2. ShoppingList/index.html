@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+</head>
+    <script>
+    $(window).load(function() {
+		// Animate loader off screen
+		$('.se-pre-con').fadeIn("fast").delay(1500).fadeOut('fast');
+	});</script>
+<body>
+        
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="index2.html">Shopping List</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <div class="se-pre-con"></div>
+
+    <div id="img">
+            <a>Click! ⤻</a>
+        <a href="index2.html"><img id="shoppingCart" src="shopping-cart-1105049_1280.png" /></a>
+    </div>
+</body>
+<script type="text/javascript" src="behaviour.js"></script>
+</html>
